@@ -72,11 +72,6 @@
         > load the domain’s homepage,9 scroll to the bottom of the page, then sleep for 25 seconds. Further, we programmed our crawler to select
         > nine internal hyperlinks at random from the home-page and crawl them using the same load, scroll, and sleep approach.
 
-        *manual verification and accounting for error*
-        > We assessed the impact of anti-crawler countermeasures on our crawler by manually revisiting 200 randomly selected websites, weighted
-        > by Tranco rank... using the same IP addresses as the crawler used. We received CAPTCHA challenges on two of the websites that prevented
-        >  them from loading normally. Thus, we estimate that around 1% of websites in our sample were impacted by anti-crawler countermeasures.
-
         *inclusion trees*
         > Our crawler recorded detailed information during each visit to a webpage, including all HTTP request and response headers and all cookies
         > that were set. Furthermore, our crawler recorded the resource inclusion tree for each webpage [3, 6]... We decompose the inclusion tree
@@ -86,6 +81,11 @@
         >  chain if (1) there was at least one HTTP request in the chain that matched a rule in the EasyList or EasyPrivacy block lists,10 or (2)
         > the chain terminated in the loading of a 1⇥1 tracking pixel [21]. We use these A&A chains in § 4 to analyze the sources and destinations
         > of HTTP requests that included the USP String, i.e., to understand how this consent signal is being passed from one party to another.
+
+        *manual verification and accounting for error (extra)*
+        > We assessed the impact of anti-crawler countermeasures on our crawler by manually revisiting 200 randomly selected websites, weighted
+        > by Tranco rank... using the same IP addresses as the crawler used. We received CAPTCHA challenges on two of the websites that prevented
+        >  them from loading normally. Thus, we estimate that around 1% of websites in our sample were impacted by anti-crawler countermeasures.
 
       </details>
 
@@ -107,7 +107,7 @@
         > attempted to detect the presence of the `__uspapi()` method. If it was present, then our script called the method and recorded the resulting
         >  **USP String**.
 
-        *manual verification and accounting for error*
+        *manual verification and accounting for error (extra)*
         > To assess false positives we randomly selected 50 websites, weighted by Tranco rank... where our crawler detected the USP API and revisited
         > them manually in Chrome using an IP address in California. Our crawler successfully detected the USP API on 49 websites, yielding a false
         > positive rate of 2%. Furthermore, the value of the USP String recorded by our crawler matched our manual observation of the value

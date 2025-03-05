@@ -9,7 +9,7 @@
 ## Task Overview
 
 ### Crawl 1 Tasks - What compliance frameworks are top publishers using?
-  1. gather a csv file top publishers from Tranco (https://tranco-list.eu/)
+  1. gather a csv dataset of top publishers from Tranco (https://tranco-list.eu/)
      - determine number of top publishers to crawl (1M or 10K)
      - narrow down list (only websites that load ??)
      - consider also adding domains of common data brokers (see methodology)
@@ -227,13 +227,20 @@
 
       </details>
 
-  4. Compl
+  4. Compile csv dataset of publishers who use the GPP API.
+
+  5. Data Analysis
+
+      <details>
+        <summary><strong>Methodology</strong></summary><br>
+
+        (incomplete)
+
+      </details>
 
 ---
 
 ### Crawl 2 Tasks - Do publishers that have adopted GPP handle the Opt Out signal correctly?
-
-Dependencies: A narrowed-down dataset from Crawl 1 is needed.  
 
   1. gather csv of publishers who use GPP API (dependent on dataset aquired from Crawl 1)
 
@@ -263,10 +270,3 @@ https://github.com/InteractiveAdvertisingBureau/Global-Privacy-Platform/blob/mai
 - strings encoded with Fibonacci
 
 https://github.com/InteractiveAdvertisingBureau/Global-Privacy-Platform/blob/main/Core/CMP%20API%20Specification.md
-
-Notes
-- pull websites from top ## from Tranco (bigger or lesser depending on user counts for other analysis)
-- check if companies use GPP in the first place
-- then we make our own version of the CMP API to instantiate before website loads and see the stack trace of what websites access it ??
-
-- get Semrush data, but this is a separate component that can be done whenever 

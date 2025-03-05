@@ -274,9 +274,7 @@ This analysis can be accomplished independently of any crawls.
 (incomplete)(copy over from Project Proposal)
 
 ## Extra Resources/References 
-
-https://github.com/InteractiveAdvertisingBureau/Global-Privacy-Platform/blob/main/Core/Consent%20String%20Specification.md
-- Digital property owners or CMPs are responsible for generating, persisting, and passing the GPP String.
-- strings encoded with Fibonacci
-
-https://github.com/InteractiveAdvertisingBureau/Global-Privacy-Platform/blob/main/Core/CMP%20API%20Specification.md
+- https://github.com/InteractiveAdvertisingBureau/Global-Privacy-Platform/blob/main/Core/Consent%20String%20Specification.md
+- https://github.com/InteractiveAdvertisingBureau/Global-Privacy-Platform/blob/main/Core/CMP%20API%20Specification.md
+- https://github.com/IABTechLab/iabgpp-es  more specific documentation
+- https://github.com/InteractiveAdvertisingBureau/Global-Privacy-Platform/pull/130/files#diff-9f74c1a0c743e0806094e699709db1dcce8eb54e56b25d34608e0cce715759b1 un-merged GPP Implementation Guidelines 

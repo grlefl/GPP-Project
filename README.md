@@ -43,7 +43,7 @@
 
       </details>
 
-  2. establish a VPN
+  2. establish an IP address
      - by default, use a California VPN to assess widespread adoption; focus on state-level analysis later
     
       <details>
@@ -248,7 +248,9 @@
 
 ### Crawl 3 Tasks - How is user preference handled differently across states?
 
-  1. gather csv of publishers who use GPP API (dependent on dataset aquired from Crawl 1) 
+  1. gather csv of publishers who use GPP API (dependent on dataset aquired from Crawl 1)
+  - use IP addresses from different states
+  - see if states string are taken into account... (more research needed)
 
 ---
 

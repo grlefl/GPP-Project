@@ -252,7 +252,7 @@
 
 ---
 
-### Crawl 3 Tasks - How is user preference handled differently across states?
+### Crawl 4 Tasks - How is user preference handled differently across states?
 
   1. gather csv of publishers who use GPP API (dependent on dataset aquired from Crawl 1)
   - use IP addresses from different states

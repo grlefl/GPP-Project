@@ -115,7 +115,7 @@
         > by Tranco rank, from Crawl 4 where our crawler did not detect the USP API and did detect at least one embedded resource from an A&A company.
         > We manually revisited these websites and found zero false negatives.
 
-        *extra analysis for cookies (probably irrelevant)*
+        *extra analysis for cookies (probably unneeded)*
         > To understand which parties were writing first-party cookies, we instrumented our crawler to record all accesses to the DOM `cookie.set` method... 
 
       </details>

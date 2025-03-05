@@ -35,7 +35,7 @@
       </details>
 
   2. establish a VPN
-     - For now, I think the default California VPN is fine. Don't want to worry about state-level analysis in this crawl.
+     - by default, use a California VPN to assess widespread adoption; focus on state-level analysis later
     
       <details>
         <summary>Methodology</summary><br>
@@ -45,7 +45,7 @@
         Setting the Bar Low: Are Websites Complying With the Minimum Requirements of the CCPA?
      
         > All crawls were conducted using virtual machines from Amazon Web Services with IP addresses in California.
-        >
+        
         > We assessed the impact of anti-crawler countermeasures on our crawler by manually revisiting 200 randomly selected websites, weighted by Tranco rank, from Crawl 3 and Crawl 4, using the same IP addresses as the crawler used.
 
       </details>
@@ -53,11 +53,11 @@
   4. determine which websites use GPP, USP
      - 
 
-### Crawl 2 Tasks
-  1. check if GPP being handled correctly
+### Crawl 2 Tasks (is GPP being used correctly)
+  1. step 1
 
-### Crawl 3 Tasks 
-  1. state-level analysis 
+### Crawl 3 Tasks (state-level analysis)
+  1. step 1
 
 ### Extra Compliance Analysis 
 

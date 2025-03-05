@@ -49,7 +49,58 @@
       </details>
 
   3. determine which websites use GPP/USP
-     - 
+     - preliminary work needed for general information (cookies, etc)
+    
+      <details>
+        <summary>Preliminary Work Methodology</summary><br>
+
+        Johnny Still Can’t Opt-out: Assessing the IAB CCPA Compliance Framework
+
+        > We used custom scripts, written in Python and JavaScript, to drive and instrument an instance of Chrome8 using the Chrome DevTools Protocol [13]. We left Chrome at its               default settings, except during crawls where we varied HTTP headers, as described below.
+        >
+        > All crawls were conducted using virtual machines from Amazon Web Services with IP addresses in California.
+
+        > During each crawl of the Tranco top 10 K, our crawler visited each domain one-by-one. For each domain, we programmed the crawler to load the domain’s homepage,9 scroll to the bottom of the page, then sleep for 25 seconds. Further, we programmed our crawler to select nine internal hyperlinks at random from the home-page and crawl them using the same load, scroll, and sleep approach.
+
+        > We assessed the impact of anti-crawler countermeasures on our crawler by manually revisiting 200 randomly selected websites, weighted by Tranco rank, from Crawl 3 and Crawl 4, using the same IP addresses as the crawler used. We received CAPTCHA challenges on two of the websites that prevented them from loading normally. Thus, we estimate that around 1% of websites in our sample were impacted by anti-crawler countermeasures.
+        
+        > Our crawler recorded detailed
+information during each visit to a webpage, including all HTTP
+request and response headers and all cookies that were set. Fur-
+thermore, our crawler recorded the resource inclusion tree for each
+webpage [3, 6]... We decompose the inclusion tree for each webpage into
+inclusion chains, where each chain corresponds to a unique path from root to leaf in the given tree [5]. Furthermore, given the focus
+of our study, we isolated A&A chains that correspond to the serving
+of an ad or a tracker. We label a given inclusion chain as an A&A
+chain if (1) there was at least one HTTP request in the chain that
+matched a rule in the EasyList or EasyPrivacy block lists,10 or (2)
+the chain terminated in the loading of a 1⇥1 tracking pixel [21]. We
+use these A&A chains in § 4 to analyze the sources and destinations
+of HTTP requests that included the USP String, i.e., to understand
+how this consent signal is being passed from one party to another.
+
+      </details>
+
+      <details>
+        <summary>USP API Detection Methodology</summary><br>
+
+        > Speci￿cally, the CCPA Framework requires that a
+JavaScript method called __uspapi() be instantiated in the ￿rst-
+party context. This method must support a getUSPData command
+that returns a uspData object containing the USP String [31]. This
+method can be called directly by third parties present in the ￿rst-
+party context, or indirectly using the JavaScript postMessage DOM
+API to communicate with a special __uspapiLocator iframe. The
+CCPA Framework recommends that the USP String be stored in a
+￿rst-party cookie named usprivacy and that it be shared using a
+URL parameter with the name us_privacy. 
+
+      </details>
+
+      <details>
+        <summary>GPP API Detection Methodology</summary><br>
+
+      </details>
 
 ---
 

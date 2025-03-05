@@ -14,7 +14,7 @@
      - consider also adding domains of common data brokers (see methodology)
 
       <details>
-        <summary>Methodology</summary><br>
+        <summary><strong>Methodology</strong></summary><br>
 
         Johnny Still Can’t Opt-out: Assessing the IAB CCPA Compliance Framework
         
@@ -46,7 +46,7 @@
      - by default, use a California VPN to assess widespread adoption; focus on state-level analysis later
     
       <details>
-        <summary>Methodology</summary><br>
+        <summary><strong>Methodology</strong></summary><br>
 
         Setting the Bar Low: Are Websites Complying With the Minimum Requirements of the CCPA?
      
@@ -61,7 +61,7 @@
      - preliminary work needed for general information (cookies, inclusion trees, etc)
     
       <details>
-        <summary>Preliminary Work Methodology</summary><br>
+        <summary><strong>Preliminary Work Methodology</strong></summary><br>
 
         Johnny Still Can’t Opt-out: Assessing the IAB CCPA Compliance Framework
 
@@ -90,7 +90,7 @@
       </details>
 
       <details>
-        <summary>USP API Detection Methodology</summary><br>
+        <summary><strong>USP API Detection Methodology</strong></summary><br>
 
         Johnny Still Can’t Opt-out: Assessing the IAB CCPA Compliance Framework
 
@@ -121,10 +121,27 @@
       </details>
 
       <details>
-        <summary>GPP API Detection Methodology</summary><br>
+        <summary><strong>GPP API Detection Methodology</strong></summary><br>
 
         Similarly to the CCPA Framework, GPP specifies that every consent manager must provide the `__gpp` API function.
         https://github.com/InteractiveAdvertisingBureau/Global-Privacy-Platform/blob/main/Core/CMP%20API%20Specification.md
+
+        Every consent manager must provide the following API function: 
+
+        <code>__gpp(command, callback, parameter, [version])</code>
+        
+        
+        Requirements for the interface: 
+        - The <code>__gpp</code> function must always be a function and cannot be any other type, even if only temporarily on 
+          initialization – the API must be able to handle calls at all times.
+        - The command must always be a string.
+        - The callback must always be a function.
+        - Parameter can be of mixed type depending on used command
+        - The <code>__gpp</code> function does not have a return value
+        - If a CMP cannot immediately respond to a query, the CMP must queue all calls to the function and execute them later. 
+          The CMP must execute the commands in the same order in which the function was called.
+        - A CMP must support all generic commands. All generic commands must always be available when a <code>__gpp</code> function is present 
+          on the page. This means that “[stub code](#stubcode)” that supports all generic commands must be in place before/during CMP load.
 
         #### `ping` <a name="ping"></a>
 
@@ -152,8 +169,6 @@
             <td></td>
           </tr>     
         </table>
-        
-        
         
         *Example:*
         

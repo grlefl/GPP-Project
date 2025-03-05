@@ -18,9 +18,9 @@
 
         Johnny Still Can’t Opt-out: Assessing the IAB CCPA Compliance Framework
         
-        > To gather data for this study, we chose to crawl the top 10 K domains from the Tranco list [36].7 We focus on the top 10 K domains because Van Nortwick and Wilson [60] found that the CCPA and CPRA were unlikely to apply to websites that fell below this level of popularity since they did not receive enough unique visitors from California to meet the laws’ eligibility criteria (see § 2.3). 
+        > To gather data for this study, we chose to crawl the top 10 K domains from the Tranco list [36].7 We focus on the top 10 K domains because Van Nortwick and Wilson [60] found          that the CCPA and CPRA were unlikely to apply to websites that fell below this level of popularity since they did not receive enough unique visitors from California to meet the         laws’ eligibility criteria (see § 2.3). 
 
-        > That said, the CCPA and CPRA may not apply to all domains in this list—e.g., domains owned by non-pro￿t organizations—and thus we refrain from asserting whether speci￿c websites are in compliance with the CCPA or CPRA (see § 3.5). Rather, the goal of our study is to assess the overall adoption of the CCPA Framework and ￿ows of consent information, a goal for which it is su￿cient for us to cover popular websites.
+        > That said, the CCPA and CPRA may not apply to all domains in this list—e.g., domains owned by non-pro￿t organizations—and thus we refrain from asserting whether speci￿c               websites are in compliance with the CCPA or CPRA (see § 3.5). Rather, the goal of our study is to assess the overall adoption of the CCPA Framework and ￿ows of consent                  information, a goal for which it is su￿cient for us to cover popular websites.
 
         Setting the Bar Low: Are Websites Complying With the Minimum Requirements of the CCPA?
      
@@ -28,7 +28,7 @@
         >
         > ... with 2,902 domains that were identified as third-party trackers and/or advertisers by Bashir et al. [15].7
         >
-        > To further narrow this list, we performed an initial crawl in which we attempted to resolve each domain to a website, scrape its homepage, extract the page’s text, and then analyze the text with the Python langdetect library. Our crawler failed to retrieve a non-empty webpage from 267,718 (27%) of the domains in our initial list due to a variety of errors, including DNS resolution failure, connection failures, TLS errors, and HTTP 4XX and 5XX responses...
+        > To further narrow this list, we performed an initial crawl in which we attempted to resolve each domain to a website, scrape its homepage, extract the page’s text, and then           analyze the text with the Python langdetect library. Our crawler failed to retrieve a non-empty webpage from 267,718 (27%) of the domains in our initial list due to a variety           of errors, including DNS resolution failure, connection failures, TLS errors, and HTTP 4XX and 5XX responses...
         > 
         >  Our final corpus of 497,870 domains includes those that successfully returned an HTML webpage containing English text.
 
@@ -40,29 +40,31 @@
       <details>
         <summary>Methodology</summary><br>
 
-        Johnny Still Can’t Opt-out: Assessing the IAB CCPA Compliance Framework
-
         Setting the Bar Low: Are Websites Complying With the Minimum Requirements of the CCPA?
      
         > All crawls were conducted using virtual machines from Amazon Web Services with IP addresses in California.
         
-        > We assessed the impact of anti-crawler countermeasures on our crawler by manually revisiting 200 randomly selected websites, weighted by Tranco rank, from Crawl 3 and Crawl 4, using the same IP addresses as the crawler used.
+        > We assessed the impact of anti-crawler countermeasures on our crawler by manually revisiting 200 randomly selected websites, weighted by Tranco rank, from Crawl 3 and Crawl           4, using the same IP addresses as the crawler used.
 
       </details>
 
-  4. determine which websites use GPP, USP
+  3. determine which websites use GPP/USP
      - 
 
 ---
 
 ### Crawl 2 Tasks - Do publishers that have adopted GPP handle the Opt Out signal correctly?
+
 Dependencies: A narrowed-down dataset from Crawl 1 is needed.  
+
   1. 
 
 ---
 
 ### Crawl 3 Tasks - How is user preference handled differently across states?
+
 Dependencies: A narrowed-down dataset from Crawl 1 is needed.  
+
   1. 
 
 ---

@@ -22,6 +22,17 @@
 
         > That said, the CCPA and CPRA may not apply to all domains in this list—e.g., domains owned by non-pro￿t organizations—and thus we refrain from asserting whether speci￿c websites are in compliance with the CCPA or CPRA (see § 3.5). Rather, the goal of our study is to assess the overall adoption of the CCPA Framework and ￿ows of consent information, a goal for which it is su￿cient for us to cover popular websites.
 
+        Setting the Bar Low: Are Websites Complying With the Minimum Requirements of the CCPA?
+     
+        > To build our corpus, we joined the top 1 million domains from the research-oriented Tranco6 domain popularity ranking [60]...
+        >
+        > ... with 2,902 domains that were identified as third-party trackers and/or advertisers by Bashir et al. [15].7
+        >
+        > To further narrow this list, we performed an initial crawl in which we attempted to resolve each domain to a website, scrape its homepage, extract the page’s text, and then analyze the text with the Python langdetect library. Our crawler failed to retrieve a non-empty webpage from 267,718 (27%) of the domains in our initial list due to a variety of errors, including DNS resolution failure, connection failures, TLS errors, and HTTP 4XX and 5XX responses...
+        > 
+        >  Our final corpus of 497,870 domains includes those that successfully returned an HTML webpage containing English text.
+     
+
       </details>
 
   3. establish a VPN

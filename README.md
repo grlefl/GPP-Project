@@ -123,6 +123,92 @@
       <details>
         <summary>GPP API Detection Methodology</summary><br>
 
+        Similarly to the CCPA Framework, GPP specifies that every consent manager must provide the `__gpp` API function.
+        https://github.com/InteractiveAdvertisingBureau/Global-Privacy-Platform/blob/main/Core/CMP%20API%20Specification.md
+
+        #### `ping` <a name="ping"></a>
+
+        The `ping` command can be used to determine the state of the CMP. The callback shall be called with a <a href="https://github.com/InteractiveAdvertisingBureau/Global-Privacy-Platform/blob/main/Core/CMP%20API%20Specification.md#pingreturn-">PingReturn</a> object as the value of the `data` parameter. A value of `false` will be passed as the argument to the `success` parameter if the CMP fails to process this command.
+        
+        <table>
+          <tr>
+            <td><strong>argument</strong></td>
+            <td><strong>type</strong></td>
+            <td><strong>value</strong></td>
+          </tr>
+          <tr>
+            <td><code>command</code></td>
+            <td>string</td>
+            <td>"ping"</td>
+          </tr>
+          <tr>
+            <td><code>callback</code></td>
+            <td>function</td>
+            <td>function (data: <a href="https://github.com/InteractiveAdvertisingBureau/Global-Privacy-Platform/blob/main/Core/CMP%20API%20Specification.md#pingreturn-">PingReturn</a>, success: boolean)</td>
+          </tr>
+          <tr>
+            <td><code>parameter</code></td>
+            <td>not used</td>
+            <td></td>
+          </tr>     
+        </table>
+        
+        
+        
+        *Example:*
+        
+        ``` javascript
+        __gpp('ping', myFunction);
+        ```
+        
+        #### `PingReturn` <a name="pingreturn"></a>
+        
+        This object contains information about the loading status and configuration of the CMP.
+        
+        ```javascript
+        PingReturn = {
+        
+        gppVersion : String, // must be “Version.Subversion”, current: “1.1”
+        
+        cmpStatus : String, // possible values: stub, loading, loaded, error
+        
+        cmpDisplayStatus: String, // possible values: hidden, visible, disabled
+        
+        signalStatus : String, // possible values: not ready, ready
+        
+        // List of supported APIs (section ids and prefix strings).
+        // Example: ["2:tcfeuv2","6:uspv1"] 
+        supportedAPIs : Array of string,
+        
+        // IAB assigned CMP ID, may be 0 during stub/loading. Refer the above CMP ID section for additional information.
+        cmpId : Number,
+        
+        sectionList : Array of Number, // may be empty during loading of the CMP
+        
+        // Section ID considered to be in force for this transaction.
+        // In most cases, this field should have a single section ID. In rare occasions where such a single section ID
+        // can not be determined, the field may contain up to 2 values. During the transition period which ends on
+        // September 30, 2023, the legacy USPrivacy section may be determined as applicable along with another US section.
+        // In this case, the field may contain up to 3 values where one of the values is 6, representing the
+        // legacy USPrivacy section. The value can be 0 or a Section ID specified by the Publisher / Advertiser, during
+        // stub / load.
+        // When no section is applicable, the value will be [-1].
+        applicableSections: Array of Number,
+        
+        gppString: String // the complete encoded GPP string, may be empty during CMP load
+        
+        // The parsedSections property represents an object of all parsed sections of the gppString property that are supported
+        // by the API on this page (see supportedAPIs property). The object contains one property for each supported API with
+        // the name of the API as the property name and the value as a parsed representation of this section with exactly the
+        // same return as the getSection command, which may include subsections. If a section is supported but not represented
+        // in the gppString, it is omitted in the parsedSections object.
+        // Please refer to each section's spec for the exact field names and data types in JavaScript. The sections here should
+        // be consistent with the GPP string, not placeholder values.
+        parsedSections: Object
+        
+        }
+        ```
+
       </details>
 
 ---

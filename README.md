@@ -240,9 +240,15 @@
 
 ---
 
-### Crawl 2 Tasks - Do publishers that have adopted GPP handle the Opt Out signal correctly?
+### Crawl 2 Tasks - Do publishers that have adopted GPP handle the Opt Out signal correctly? (API OPT-OUT)
 
   1. gather csv of publishers who use GPP API (dependent on dataset aquired from Crawl 1)
+
+---
+
+### Crawl 3 Tasks - Do publishers that have adopted GPP handle the Opt Out signal correctly? (GPC OPT-OUT)
+
+1. gather csv of publishers who use GPP API (dependent on dataset aquired from Crawl 1)
 
 ---
 

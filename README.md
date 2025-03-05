@@ -99,7 +99,9 @@
         > Specifcally, the CCPA Framework requires that a JavaScript method called `__uspapi()` be instantiated in the first-party context. This
         > method must support a `getUSPData` command that returns a `uspData` object containing the USP String [31]. This method can be called directly
         > by third parties present in the first-party context, or indirectly using the JavaScript `postMessage` DOM API to communicate with a special
-        > `__uspapiLocator` iframe. The CCPA Framework recommends that the USP String be stored in a first-party cookie named `usprivacy` and that it be
+        > `__uspapiLocator` iframe. 
+        > 
+        > The CCPA Framework recommends that the USP String be stored in a first-party cookie named `usprivacy` and that it be
         > shared using a URL parameter with the name `us_privacy`.
 
         *detecting USP API*

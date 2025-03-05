@@ -250,15 +250,41 @@
 
 ### Crawl 3 Tasks - Do publishers that have adopted GPP handle the Opt Out signal correctly? (GPC OPT-OUT)
 
-1. gather csv of publishers who use GPP API (dependent on dataset aquired from Crawl 1)
+  1. gather csv of publishers who use GPP API (dependent on dataset aquired from Crawl 1)
+     - same methodology from Crawl 2, except use GPC for opt-out
+
+      <details>
+        <summary><strong>Methodology</strong></summary><br>
+        
+        Johnny Still Can’t Opt-out: Assessing the IAB CCPA Compliance Framework
+        
+        > During Crawl 3, we enabled GPC in our crawler by adding the `Sec-GPC: 1` header to all HTTP requests and setting the navigator
+        >  `.globalPrivacyControl` property to true. We manually validated our crawler’s ability to detect the USP API when GPC was enabled.
+        >  To assess false positives we randomly selected 50 websites, weighted by Tranco rank, from Crawl 3 where our crawler had detected
+        >  the USP API. We manually revisited these websites using an IP address in California and enabled GPC in our browser. Our crawler
+        >  successfully detected the USP API on 47 websites, yielding a false positive rate of 6%. Additionally, we confirmed that the GPC
+        >  functionality of our crawler worked by having it visit the offcial GPC validation website [24].
+        
+        
+        > In Crawl 3, when GPC was enabled, 380 out of 825 (46.1%) publishers with the USP API set the USP String to opt-out.20
+        > ... Collectively, these results suggest that some publishers are reacting to the GPC signal by correctly setting the USP
+        >  String to opt-out—thus helping to convey the users’ opt-out intent to third parties— but more than half are not.
+   
+      </details>
 
 ---
 
 ### Crawl 4 Tasks - How is user preference handled differently across states?
 
   1. gather csv of publishers who use GPP API (dependent on dataset aquired from Crawl 1)
-  - use IP addresses from different states
-  - see if states string are taken into account... (more research needed)
+
+  2. establish an IP address
+     - there will be IP addresses from different states that complete this crawl 
+
+  3. inject simulated GPP API before webpage loads
+
+  4. similar to Crawl 2 in seeing if correct state-specific information is being passed to third-parties
+     through cookies and url parameters... (more research needed)
 
 ---
 

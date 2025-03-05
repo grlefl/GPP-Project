@@ -8,6 +8,25 @@
 
 ## Task Overview
 
+### Crawl 1 Tasks
+  1. develop a list of top websites from Tranco (https://tranco-list.eu/)
+     - narrow down list (only websites that load)
+     - consider also adding domains of common data brokers (see methodology) 
+
+  3. establish a VPN
+     - For now, I think the default California VPN is fine. Don't want to worry about state-level analysis in this crawl. 
+
+  4. determine which websites use GPP, USP
+     - 
+
+### Crawl 2 Tasks
+  1. check if GPP being handled correctly
+
+### Crawl 3 Tasks 
+  1. state-level analysis 
+
+### Extra Compliance Analysis 
+
 ## Possible Tools to Use
 (incomplete)(copy over from Project Proposal)
 

@@ -9,7 +9,7 @@
 ## Task Overview
 
 ### Crawl 1 Tasks
-  1. develop a list of top websites from Tranco (https://tranco-list.eu/)
+  1. gather a csv file top publishers from Tranco (https://tranco-list.eu/)
      - narrow down list (only websites that load ??)
      - consider also adding domains of common data brokers (see methodology)
 
@@ -31,12 +31,24 @@
         > To further narrow this list, we performed an initial crawl in which we attempted to resolve each domain to a website, scrape its homepage, extract the page’s text, and then analyze the text with the Python langdetect library. Our crawler failed to retrieve a non-empty webpage from 267,718 (27%) of the domains in our initial list due to a variety of errors, including DNS resolution failure, connection failures, TLS errors, and HTTP 4XX and 5XX responses...
         > 
         >  Our final corpus of 497,870 domains includes those that successfully returned an HTML webpage containing English text.
-     
 
       </details>
 
-  3. establish a VPN
-     - For now, I think the default California VPN is fine. Don't want to worry about state-level analysis in this crawl. 
+  2. establish a VPN
+     - For now, I think the default California VPN is fine. Don't want to worry about state-level analysis in this crawl.
+    
+      <details>
+        <summary>Methodology</summary><br>
+
+        Johnny Still Can’t Opt-out: Assessing the IAB CCPA Compliance Framework
+
+        Setting the Bar Low: Are Websites Complying With the Minimum Requirements of the CCPA?
+     
+        > All crawls were conducted using virtual machines from Amazon Web Services with IP addresses in California.
+        >
+        > We assessed the impact of anti-crawler countermeasures on our crawler by manually revisiting 200 randomly selected websites, weighted by Tranco rank, from Crawl 3 and Crawl 4, using the same IP addresses as the crawler used.
+
+      </details>
 
   4. determine which websites use GPP, USP
      - 

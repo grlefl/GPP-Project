@@ -10,6 +10,7 @@
 
 ### Crawl 1 Tasks - What compliance frameworks are top publishers using?
   1. gather a csv file top publishers from Tranco (https://tranco-list.eu/)
+     - determine number of top publishers to crawl (1M or 10K)
      - narrow down list (only websites that load ??)
      - consider also adding domains of common data brokers (see methodology)
 
@@ -226,25 +227,31 @@
 
       </details>
 
+  4. Compl
+
 ---
 
 ### Crawl 2 Tasks - Do publishers that have adopted GPP handle the Opt Out signal correctly?
 
 Dependencies: A narrowed-down dataset from Crawl 1 is needed.  
 
-  1. 
+  1. gather csv of publishers who use GPP API (dependent on dataset aquired from Crawl 1)
 
 ---
 
 ### Crawl 3 Tasks - How is user preference handled differently across states?
 
-Dependencies: A narrowed-down dataset from Crawl 1 is needed.  
-
-  1. 
+  1. gather csv of publishers who use GPP API (dependent on dataset aquired from Crawl 1) 
 
 ---
 
 ### Extra Compliance Analysis - Which state privacy laws apply to a given publisher? 
+This analysis can be accomplished independently of any crawls. 
+
+  1. determine state laws for compliance (3 different qualifiers)
+  2. gather user count data from external resource $$$
+  2. gather state populations
+  3. complete analysis based on population assumptions
 
 ## Possible Tools to Use
 (incomplete)(copy over from Project Proposal)

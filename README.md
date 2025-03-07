@@ -305,7 +305,7 @@ This analysis can be accomplished independently of any crawls.
 - https://github.com/IABTechLab/iabgpp-es  more specific documentation
 - https://github.com/InteractiveAdvertisingBureau/Global-Privacy-Platform/pull/130/files#diff-9f74c1a0c743e0806094e699709db1dcce8eb54e56b25d34608e0cce715759b1 un-merged GPP Implementation Guidelines
 ### Related Works:
--[Johnny Still Can't Opt Out](https://petsymposium.org/popets/2024/popets-2024-0120.pdf)\n
--[A Study of GDPR Compliance under the Transparency and Consent Framework](https://dl.acm.org/doi/pdf/10.1145/3589334.3645618)\n
--[Websites’ Global Privacy Control Compliance at Scale and over Time](https://sebastianzimmeck.de/hausladenEtAlGPCWeb2025.pdf)\n
+-[Johnny Still Can't Opt Out](https://petsymposium.org/popets/2024/popets-2024-0120.pdf)<br />
+-[A Study of GDPR Compliance under the Transparency and Consent Framework](https://dl.acm.org/doi/pdf/10.1145/3589334.3645618)<br />
+-[Websites’ Global Privacy Control Compliance at Scale and over Time](https://sebastianzimmeck.de/hausladenEtAlGPCWeb2025.pdf)<br />
 

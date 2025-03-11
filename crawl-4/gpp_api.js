@@ -5,6 +5,10 @@ const puppeteer = require('puppeteer');
     const page = await browser.newPage();
 
     await page.evaluateOnNewDocument(() => {
+
+        // -- BEGIN GPP API STUB IMPLEMENTATION --
+
+        // I think this is the consent frame...
         window.__gpp_addFrame = function (n) {
             if (!window.frames[n]) {
                 if (document.body) {
@@ -17,10 +21,16 @@ const puppeteer = require('puppeteer');
                 }
             }
         };
+
+        // commands available to third-parties
         window.__gpp_stub = function () {
             var b = arguments;
             __gpp.queue = __gpp.queue || [];
             __gpp.events = __gpp.events || [];
+
+            // added code: checking for third-party calls
+            console.log("Command:", b[0]);
+            console.log("Parameters:", b);
 
             if (!b.length || (b.length === 1 && b[0] === "queue")) {
                 return __gpp.queue;
@@ -149,6 +159,8 @@ const puppeteer = require('puppeteer');
                 __gpp.queue.push([].slice.apply(b));
             }
         };
+
+        // not sure what this is...
         window.__gpp_msghandler = function (event) {
             var msgIsString = typeof event.data === "string";
             try {
@@ -175,15 +187,20 @@ const puppeteer = require('puppeteer');
                 );
             }
         };
+
+        // set up GPP if it's not in window
         if (!("__gpp" in window) || typeof window.__gpp !== "function") {
             window.__gpp = window.__gpp_stub;
             window.addEventListener("message", window.__gpp_msghandler, false);
             window.__gpp_addFrame("__gppLocator");
         }
+
+        // -- END GPP API STUB IMPLEMENTATION --
+
         Object.defineProperty(window, "__gpp", { configurable: false, writable: false });
     });
 
-    await page.goto('https://www.3dayblinds.com/', { waitUntil: 'networkidle2', timeout: 0 }); // Change this to the target site
+    await page.goto('https://www.washingtonpost.com/', { waitUntil: 'networkidle2', timeout: 0 }); // Change this to the target site
 
     // Wait for potential API calls
     await new Promise(r => setTimeout(r, 1000000));

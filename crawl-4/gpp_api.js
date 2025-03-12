@@ -8,7 +8,7 @@ const puppeteer = require('puppeteer');
 
         // -- BEGIN GPP API STUB IMPLEMENTATION --
 
-        // I think this is the consent frame...
+        // I think this is the consent frame... ??
         window.__gpp_addFrame = function (n) {
             if (!window.frames[n]) {
                 if (document.body) {
@@ -160,7 +160,7 @@ const puppeteer = require('puppeteer');
             }
         };
 
-        // not sure what this is...
+        // not sure what this is... ??
         window.__gpp_msghandler = function (event) {
             var msgIsString = typeof event.data === "string";
             try {

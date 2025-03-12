@@ -43,7 +43,7 @@
 
       </details>
 
-      ####Initial Challenges : What string do we look for in a website to detect presence of GPP, and where do we look for it? Headers, console, cookies?
+      #### Initial Challenges : What string do we look for in a website to detect presence of GPP, and where do we look for it? Headers, console, cookies?
          - First try : Use console to run the following script :
              try {
                 __gpp('ping', (data, success) => {

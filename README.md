@@ -43,7 +43,20 @@
 
       </details>
 
-  2. establish an IP address
+      Initial Challenges : What string do we look for in a website to detect presence of GPP, and where do we look for it? Headers, console, cookies?
+         - First try : Use console to run the following script :
+             try {
+                __gpp('ping', (data, success) => {
+                    console.log(data);
+                });
+                } catch (error) {
+                console.log(error);
+            }
+            Two possible responses:
+            - Something similar to this : Pt {gppVersion: '1.1', cmpStatus: 'loaded', cmpDisplayStatus: 'hidden', signalStatus: 'ready', supportedAPIs: Array(9), …}
+            - An error
+
+  3. establish an IP address
      - by default, use a California VPN to assess widespread adoption; focus on state-level analysis later
     
       <details>
@@ -58,7 +71,7 @@
 
       </details>
 
-  3. determine which websites use GPP/USP
+  4. determine which websites use GPP/USP
      - preliminary work needed for general information (cookies, inclusion trees, etc)
     
       <details>
@@ -229,9 +242,9 @@
 
       </details>
 
-  4. Compile csv dataset of publishers who use the GPP API.
+  5. Compile csv dataset of publishers who use the GPP API.
 
-  5. Data Analysis
+  6. Data Analysis
 
       <details>
         <summary><strong>Methodology</strong></summary><br>

@@ -12,7 +12,6 @@ with open("D:/AAAA/websites100.txt", "r") as f:
 # Try these variants (with trailing slash)
 prefixes = ["https://", "https://www.", "http://", "http://www."]
 
-# Chrome config
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-gpu")
@@ -24,7 +23,7 @@ CHROME_DRIVER_PATH = "D:/AAAA/New folder/chromedriver.exe"
 service = Service(CHROME_DRIVER_PATH)
 driver = webdriver.Chrome(service=service, options=chrome_options)
 
-# JS code to inject
+# JS code with ping object
 js_code = """
 try {
     __gpp("ping", function (data, success) {

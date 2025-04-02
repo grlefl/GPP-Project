@@ -5,13 +5,14 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 
-# Read domains
-with open("D:/AAAA/websites100.txt", "r") as f:
+#Domain list from TRANCO dataset
+with open("D:/AAAA/websites400.txt", "r") as f:
     base_domains = [line.strip() for line in f]
 
-# Try these variants (with trailing slash)
+#Prefixes to try from the paper, in this order
 prefixes = ["https://", "https://www.", "http://", "http://www."]
 
+# Chrome config
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-gpu")
@@ -19,11 +20,15 @@ chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.set_capability("goog:loggingPrefs", {"browser": "ALL"})
 
+chrome_options.add_experimental_option("prefs", {
+    "profile.default_content_setting_values.geolocation": 1  # 1 = Allow
+})
+
 CHROME_DRIVER_PATH = "D:/AAAA/New folder/chromedriver.exe"
 service = Service(CHROME_DRIVER_PATH)
 driver = webdriver.Chrome(service=service, options=chrome_options)
 
-# JS code with ping object
+#The GPP ping object 
 js_code = """
 try {
     __gpp("ping", function (data, success) {
@@ -36,7 +41,7 @@ try {
 
 results = []
 hasGpp = []
-fail_count = 0
+fail_count = 0 # websites which can't be accessed with any of the prefixes
 
 for domain in base_domains:
     site_handled = False
@@ -66,7 +71,7 @@ for domain in base_domains:
                 hasGpp.append(site)
 
             site_handled = True
-            break  # Stop trying other variants
+            break  #Stop trying other variants
 
         except Exception as e:
             print(f"[✗] Failed: {site}: {e}")
@@ -78,7 +83,7 @@ for domain in base_domains:
 
 driver.quit()
 
-# Save to CSV
+#Save to CSV
 csv_file = "gpp_results.csv"
 with open(csv_file, mode="w", newline="", encoding="utf-8") as file:
     writer = csv.DictWriter(file, fieldnames=["Website", "Response"])

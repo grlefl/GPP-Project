@@ -5,28 +5,26 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 
-# Websites to test
-websites = [
-    "https://www.onetrust.com/blog/global-privacy-platform/", 
-    "https://www.iubenda.com"
-]
+# Read domains
+with open("D:/AAAA/websites100.txt", "r") as f:
+    base_domains = [line.strip() for line in f]
 
-# Configure Chrome options
+# Try these variants (with trailing slash)
+prefixes = ["https://", "https://www.", "http://", "http://www."]
+
+# Chrome config
 chrome_options = Options()
-chrome_options.add_argument("--headless")  # Run in headless mode
+chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-gpu")
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
-
-# Enable logging for console output
 chrome_options.set_capability("goog:loggingPrefs", {"browser": "ALL"})
 
-# Path to ChromeDriver (Replace with your actual path)
-CHROME_DRIVER_PATH = "D:/MCS/Sem4/Privacy/Project_1/chromedriver.exe"
+CHROME_DRIVER_PATH = "D:/AAAA/New folder/chromedriver.exe"
 service = Service(CHROME_DRIVER_PATH)
 driver = webdriver.Chrome(service=service, options=chrome_options)
 
-# JavaScript code to inject and execute
+# JS code to inject
 js_code = """
 try {
     __gpp("ping", function (data, success) {
@@ -38,41 +36,50 @@ try {
 """
 
 results = []
+hasGpp = []
+fail_count = 0
 
-# Visit each website and execute JavaScript
-for site in websites:
-    try:
-        driver.get(site)
-        time.sleep(5)  # Allow time for page load
+for domain in base_domains:
+    site_handled = False
+    for prefix in prefixes:
+        site = prefix + domain + "/"
+        try:
+            driver.get(site)
+            time.sleep(5)
 
-        # Execute JavaScript
-        driver.execute_script(js_code)
-        time.sleep(3)  # Allow JS execution
+            driver.execute_script(js_code)
+            time.sleep(3)
 
-        # Capture browser console logs
-        logs = driver.get_log("browser")
-        output = None
+            logs = driver.get_log("browser")
+            output = None
+            for entry in logs:
+                message = entry["message"]
+                if "GPP_RESPONSE:" in message:
+                    output = message.split("GPP_RESPONSE:")[1].strip()
+                    break
+                elif "GPP_ERROR:" in message:
+                    output = message.strip()
+                    break
 
-        for entry in logs:
-            message = entry["message"]
-            if "GPP_RESPONSE:" in message:
-                output = message.split("GPP_RESPONSE:")[1].strip()
-                break
-            elif "GPP_ERROR:" in message:
-                output = message.strip()
-                break
-        
-        results.append({"Website": site, "Response": output if output else "No Response"})
-        print(f"[✓] {site} → {output}")
+            results.append({"Website": site, "Response": output if output else "No Response"})
+            print(f"[✓] {site} → {output}")
+            if output and "gppVersion" in output:
+                hasGpp.append(site)
 
-    except Exception as e:
-        print(f"[✗] Error on {site}: {e}")
-        results.append({"Website": site, "Response": f"Error: {e}"})
+            site_handled = True
+            break  # Stop trying other variants
 
-# Close the browser
+        except Exception as e:
+            print(f"[✗] Failed: {site}: {e}")
+
+    if not site_handled:
+        fail_count += 1
+        results.append({"Website": domain, "Response": "All variants failed"})
+        print(f"[✗] All variants failed for {domain}")
+
 driver.quit()
 
-# Save results to CSV
+# Save to CSV
 csv_file = "gpp_results.csv"
 with open(csv_file, mode="w", newline="", encoding="utf-8") as file:
     writer = csv.DictWriter(file, fieldnames=["Website", "Response"])
@@ -80,3 +87,6 @@ with open(csv_file, mode="w", newline="", encoding="utf-8") as file:
     writer.writerows(results)
 
 print(f"\nResults saved to {csv_file}")
+print(f"Websites with GPP support: {(hasGpp)}")
+print(f"Websites with GPP support: {len(hasGpp)}")
+print(f"Websites with all variants failed: {fail_count}")

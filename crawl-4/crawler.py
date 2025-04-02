@@ -7,6 +7,7 @@ from selenium.webdriver.chrome.options import Options
 
 # Configure Selenium Driver
 chrome_options = Options(); chrome_options.headless = True  # run in the background
+chrome_options.add_extension('./gpc_detector.crx') #adds GPC extension to the browser
 driver = webdriver.Chrome(options=chrome_options)  # start the browser
 
 # Set Up Output CSV File
@@ -53,11 +54,15 @@ with open(file_name, mode="a", newline="", encoding="utf-8") as file:
             # Record GPP String
             gpp_string = gpp_data.get("data", {}).get("gppString", "not found")
 
+            try:
+                gpc_signal = gpp_data['data']['parsedSections']['usnat']['Gpc']
+            except:
+                gpc_signal = 'Error'
             # Record SectionList
             section_list = gpp_data.get("data", {}).get("sectionList", [])
 
             # Write Row with Website URL, Network IP, State, and Serialized Ping Data
-            writer.writerow([url, network_ip, state, gpp_string, section_list, str(gpp_data)])
+            writer.writerow([url, network_ip, state, gpp_string, gpc_signal, section_list, str(gpp_data)])
 
 driver.quit()  # close browser
 

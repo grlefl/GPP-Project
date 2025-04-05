@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const csv = require('csv-parser');
+const { parse } = require('json2csv');
 
 (async () => {
     // Read URLs from external CSV and return them as an array
@@ -10,7 +11,6 @@ const csv = require('csv-parser');
             fs.createReadStream(filePath)
                 .pipe(csv())
                 .on('data', (row) => {
-                    // Assuming the CSV has a column named "url" -- change to whatever the column is named
                     if (row.url) {
                         urls.push(row.url);
                     }
@@ -25,35 +25,42 @@ const csv = require('csv-parser');
     };
 
     try {
-        const filePath = 'urls.csv'; // Path to your CSV file -- change to whatever it is called
+        const filePath = '1000results.csv'; // Path to your CSV file
+        const outputFilePath = 'cookies_output.csv'; // Output CSV file
         const urls = await readUrlsFromCsv(filePath);
-
         const browser = await puppeteer.launch({ headless: false });
         const page = await browser.newPage();
+        const allCookies = [];
 
-        // Iterate through URLs and check for cookies containing "gpp"
         for (const url of urls) {
             console.log(`Visiting: ${url}`);
             try {
                 await page.goto(url, { waitUntil: 'domcontentloaded' });
 
-                // Retrieve cookies for the current page -- this does not search through httpOnly cookies
-                // puppeteer doesn't support some easier methods
-                //const cookies = await page.cookies();
-                
-                // this should imitate searching through all cookies ?
+                // Retrieve cookies for the current page
                 const client = await page.target().createCDPSession();
                 const cookies = (await client.send('Network.getAllCookies')).cookies;
 
-                // check if any cookie contains "gpp"
-                const matchingCookies = cookies.filter(cookie => cookie.name.toLowerCase().includes('gpp') 
-                || cookie.value.toLowerCase().includes('gpp'));
+                // Check for cookies containing "gpp"
+                const matchingCookies = cookies.filter(cookie => 
+                    cookie.name.toLowerCase().includes('gpp') || 
+                    cookie.value.toLowerCase().includes('gpp')
+                );
 
                 if (matchingCookies.length > 0) {
-                    console.log(`Cookies matching "gpp" found on ${url}:`);
-                    matchingCookies.forEach(cookie => console.log(`${cookie.name}: ${cookie.value}`));
-                } else {
-                    console.log(`No cookies containing "gpp" found on ${url}.`);
+                    matchingCookies.forEach(cookie => {
+                        allCookies.push({
+                            url,
+                            name: cookie.name,
+                            value: cookie.value,
+                            domain: cookie.domain,
+                            path: cookie.path,
+                            expires: cookie.expires,
+                            httpOnly: cookie.httpOnly,
+                            secure: cookie.secure,
+                            sameSite: cookie.sameSite
+                        });
+                    });
                 }
             } catch (error) {
                 console.error(`Error visiting ${url}:`, error);
@@ -61,6 +68,16 @@ const csv = require('csv-parser');
         }
 
         await browser.close();
+
+        // Write to CSV file
+        if (allCookies.length > 0) {
+            const csvString = parse(allCookies, { fields: ["url", "name", "value", "domain", "path", "expires", "httpOnly", "secure", "sameSite"] });
+            fs.writeFileSync(outputFilePath, csvString);
+            console.log(`Cookies saved to ${outputFilePath}`);
+        } else {
+            console.log("No matching cookies found.");
+        }
+
     } catch (error) {
         console.error('An error occurred:', error);
     }

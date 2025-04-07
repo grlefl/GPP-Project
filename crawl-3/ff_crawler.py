@@ -11,7 +11,7 @@ ff_options.set_preference('privacy.globalprivacycontrol.enabled', True)
 driver = webdriver.Firefox(options=ff_options)  # start the browser
 
 # Set Up Output CSV File
-file_name = os.path.join("./", "ff_output.csv"); file_exists = os.path.isfile(file_name)  # make sure file exists
+file_name = os.path.join("../crawl-4/", "ff_output.csv"); file_exists = os.path.isfile(file_name)  # make sure file exists
 
 # Open CSV File for Writing
 with open(file_name, mode="a", newline="", encoding="utf-8") as file:
@@ -26,7 +26,7 @@ with open(file_name, mode="a", newline="", encoding="utf-8") as file:
     state = ip_info.get("region", "unknown")
 
     # Read Websites from Input CSV
-    with open("GPP_websites.csv", newline="", encoding="utf-8") as f:  # UPDATE THIS PATH
+    with open("../crawl-4/GPP_websites.csv", newline="", encoding="utf-8") as f:  # UPDATE THIS PATH
         reader = csv.reader(f)
 
         for row in reader:

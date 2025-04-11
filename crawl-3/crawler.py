@@ -3,15 +3,15 @@ import time
 import csv
 import requests
 from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.chrome.options import Options
 
 # Configure Selenium Driver
-ff_options = webdriver.FirefoxOptions(); ff_options.headless = True  # run in the background
-ff_options.set_preference('privacy.globalprivacycontrol.enabled', True)
-driver = webdriver.Firefox(options=ff_options)  # start the browser
+chrome_options = Options(); chrome_options.headless = True  # run in the background
+chrome_options.add_extension('./gpc_detector.crx') #adds GPC extension to the browser
+driver = webdriver.Chrome(options=chrome_options)  # start the browser
 
 # Set Up Output CSV File
-file_name = os.path.join("./", "ff_output.csv"); file_exists = os.path.isfile(file_name)  # make sure file exists
+file_name = os.path.join("./", "output.csv"); file_exists = os.path.isfile(file_name)  # make sure file exists
 
 # Open CSV File for Writing
 with open(file_name, mode="a", newline="", encoding="utf-8") as file:

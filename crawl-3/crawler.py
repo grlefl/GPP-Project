@@ -28,7 +28,7 @@ with open(file_name, mode="a", newline="", encoding="utf-8") as file:
 
 
     # Read Websites from Input CSV
-    with open("../crawl-4/GPP_websites.csv", newline="\n", encoding="utf-8") as f:  # UPDATE THIS PATH
+    with open("../crawl-1/Results/1 to 1000.csv", newline="\n", encoding="utf-8") as f:  # UPDATE THIS PATH
         reader = csv.reader(f)
 
         for row in reader:

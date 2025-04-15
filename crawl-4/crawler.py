@@ -27,8 +27,9 @@ with open(file_name, mode="a", newline="", encoding="utf-8") as file:
     state = ip_info.get("region", "unknown")
 
     # read websites from input csv
-    with open("1 to 1000.csv", newline="", encoding="utf-8") as f:  # UPDATE THIS PATH
-        reader = csv.reader(f, delimiter='\t')
+    with open("../crawl-1/Results/7000 to 8000.csv", newline="", encoding="utf-8") as f:  # UPDATE THIS PATH
+        reader = csv.reader(f, delimiter=',')
+        next(reader, None)  # skip first row
 
         for row in reader:
             if not row: continue  # skip empty lines

@@ -3,11 +3,13 @@ import time
 import csv
 import requests
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.firefox.options import Options
 
-# configure Selenium driver
-chrome_options = Options(); chrome_options.headless = True  # run in the background
-driver = webdriver.Chrome(options=chrome_options)  # start the browser
+# configure Selenium Firefox driver
+ff_options = webdriver.FirefoxOptions()
+ff_options.headless = True  # run in the background
+ff_options.set_preference('privacy.globalprivacycontrol.enabled', True)  # add GPC extension
+driver = webdriver.Firefox(options=ff_options)  # start the browser
 
 # set up output csv file
 file_name = os.path.join("./", "output.csv"); file_exists = os.path.isfile(file_name)  # make sure file exists
@@ -17,7 +19,7 @@ with open(file_name, mode="a", newline="", encoding="utf-8") as file:
     writer = csv.writer(file)
 
     if not file_exists:  # write headers if file is new
-        writer.writerow(["Tranko Rank", "Website", "Network IP Address", "State", "GPP String", "Section List", "Serialized Ping"])
+        writer.writerow(["Tranko Rank", "Website", "Network IP Address", "State", "GPP String", "Section List", "GPC Signal", "Serialized Ping", "Error"])
 
     # record Network IP and State
     network_ip = requests.get("https://api.ipify.org").text
@@ -25,14 +27,14 @@ with open(file_name, mode="a", newline="", encoding="utf-8") as file:
     state = ip_info.get("region", "unknown")
 
     # read websites from input csv
-    with open("Workaround-Results/California/unsuccessful.csv", newline="", encoding="utf-8") as f:  # UPDATE THIS PATH
+    with open("1 to 1000.csv", newline="", encoding="utf-8") as f:  # UPDATE THIS PATH
         reader = csv.reader(f, delimiter='\t')
 
         for row in reader:
             if not row: continue  # skip empty lines
             rank = row[0]; url = row[1]  # get Tranco rank and url
             if not url.startswith("https://"): url = f"https://{url}/"  # should not have to format this
-            gpp_ping = None; gpp_string = None; section_list = None; error = None  # initialize uncertain variables
+            gpp_ping = None; gpp_string = None; section_list = None; gpc_signal = None; error = None  # initialize uncertain variables
 
             try:
                 driver.get(url)  # navigate to url
@@ -50,16 +52,18 @@ with open(file_name, mode="a", newline="", encoding="utf-8") as file:
                             }
                         });
                     """)
+                    gpp_string = gpp_ping['data']['gppString']  # get GPP string
+                    section_list = gpp_ping['data']['sectionList']  # get sectionList
+                    try: gpc_signal = gpp_ping['data']['parsedSections']['usnat']['Gpc']
+                    except KeyError as e: error = f"GPC Retrieval Error: {str(e)}"
                     gpp_ping = str(gpp_ping)  # serialize ping object
-                    gpp_string = gpp_ping.get("data").get("gppString")  # get GPP string
-                    section_list = gpp_ping.get("data").get("sectionList")  # get sectionList
                 except Exception as e:
-                    error = {f"GPP Retrieval Error: {str(e)}"}
+                    error = f"GPP Retrieval Error: {str(e)}"
 
             except Exception as e:
-                error = {f"Domain Retrieval Error: {str(e)}"}
+                error = f"Domain Retrieval Error: {str(e)}"
 
             # write row with Website URL, Network IP, State, and Serialized Ping Data
-            writer.writerow([rank, url, network_ip, state, gpp_string, section_list, gpp_ping])
+            writer.writerow([rank, url, network_ip, state, gpp_string, section_list, gpc_signal, gpp_ping, error])
 
 driver.quit()  # close browser

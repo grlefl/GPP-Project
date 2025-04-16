@@ -27,7 +27,7 @@ with open(file_name, mode="a", newline="", encoding="utf-8") as file:
     state = ip_info.get("region", "unknown")
 
     # read websites from input csv
-    with open("../crawl-1/Results/7000 to 8000.csv", newline="", encoding="utf-8") as f:  # UPDATE THIS PATH
+    with open("../crawl-1/Results/9000 to 10000.csv", newline="", encoding="utf-8") as f:  # UPDATE THIS PATH
         reader = csv.reader(f, delimiter=',')
         next(reader, None)  # skip first row
 
@@ -52,7 +52,7 @@ with open(file_name, mode="a", newline="", encoding="utf-8") as file:
                                 resolve("GPP API not found");
                             }
                         });
-                    """)
+                    """); time.sleep(3)  # allow Javascript execution
                     gpp_string = gpp_ping['data']['gppString']  # get GPP string
                     section_list = gpp_ping['data']['sectionList']  # get sectionList
                     try: gpc_signal = gpp_ping['data']['parsedSections']['usnat']['Gpc']

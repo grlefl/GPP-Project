@@ -39,7 +39,7 @@ with open(file_name, mode="a", newline="", encoding="utf-8") as file:
 
             try:
                 driver.get(url)  # navigate to url
-                time.sleep(5)  # wait for page to load
+                time.sleep(7)  # wait for page to load
                 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);"); time.sleep(2)  # scroll to trigger lazy loading
 
                 # check for GPP API and record 'ping' object

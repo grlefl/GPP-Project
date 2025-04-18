@@ -27,7 +27,7 @@ with open(file_name, mode="a", newline="", encoding="utf-8") as file:
     state = ip_info.get("region", "unknown")
 
     # read websites from input csv
-    with open("../crawl-1/Results/1000 to 2000(proton).csv", newline="", encoding="utf-8") as f:  # UPDATE THIS PATH
+    with open("../crawl-1/Results/4000 to 5000(proton).csv", newline="", encoding="utf-8") as f:  # UPDATE THIS PATH
         reader = csv.reader(f, delimiter=',')
         next(reader, None)  # skip first row
 

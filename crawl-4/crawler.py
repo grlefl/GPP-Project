@@ -27,14 +27,14 @@ with open(file_name, mode="a", newline="", encoding="utf-8") as file:
     state = ip_info.get("region", "unknown")
 
     # read websites from input csv
-    with open("../crawl-1/Results/9000 to 10000.csv", newline="", encoding="utf-8") as f:  # UPDATE THIS PATH
+    with open("../crawl-1/Results/4000 to 5000(proton).csv", newline="", encoding="utf-8") as f:  # UPDATE THIS PATH
         reader = csv.reader(f, delimiter=',')
         next(reader, None)  # skip first row
 
         for row in reader:
             if not row: continue  # skip empty lines
             rank = row[0]; url = row[1]  # get Tranco rank and url
-            if not url.startswith("https://"): url = f"https://{url}/"  # should not have to format this
+            if not url.startswith("http"): url = f"https://{url}/"  # should not have to format this
             gpp_ping = None; gpp_string = None; section_list = None; gpc_signal = None; error = None  # initialize uncertain variables
 
             try:

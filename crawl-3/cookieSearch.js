@@ -11,8 +11,12 @@ const { parse } = require('json2csv');
             fs.createReadStream(filePath)
                 .pipe(csv())
                 .on('data', (row) => {
-                    if (row.url) {
-                        urls.push(row.url);
+                    //if (row["url (name)"]) {
+                     //   urls.push(row["url (name)"]);
+                        // if (row.URL) {
+                            // urls.push(row.URL));}  USE THIS FOR column titled URL
+                    if (row.URL) {
+                        urls.push(row.URL); 
                     }
                 })
                 .on('end', () => {
@@ -25,8 +29,8 @@ const { parse } = require('json2csv');
     };
 
     try {
-        const filePath = '1000results.csv'; // Path to your CSV file
-        const outputFilePath = 'cookies_output.csv'; // Output CSV file
+        const filePath = '7to8k_output.csv'; // Path to your CSV file
+        const outputFilePath = '7to8k_cookies.csv'; // Output CSV file
         const urls = await readUrlsFromCsv(filePath);
         const browser = await puppeteer.launch({ headless: false });
         const page = await browser.newPage();
@@ -43,8 +47,8 @@ const { parse } = require('json2csv');
 
                 // Check for cookies containing "gpp"
                 const matchingCookies = cookies.filter(cookie => 
-                    cookie.name.toLowerCase().includes('gpp') || 
-                    cookie.value.toLowerCase().includes('gpp')
+                    cookie.name.includes('OTGPPConsent')
+                    //cookie.value.toLowerCase().includes('gpp')
                 );
 
                 if (matchingCookies.length > 0) {

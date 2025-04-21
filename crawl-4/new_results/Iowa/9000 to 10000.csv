@@ -1,0 +1,89 @@
+Tranko Rank,Website,Network IP Address,State,GPP String,Section List,GPC Signal,Serialized Ping,Error
+9010,https://nzz.ch/,50.82.238.33,Iowa,DBABM~CQQLPkgQQLPkgAfA2BDEBmFsAP_gAEPgAAYgKPJR9G78TXlHODpzYbsEaYUX11hp4kQhAgCBI6IECDOQ8IQG1GECIAyAJCACABIAoBQBIAFEGAhEQUAAAIAFABBoSAAAAQAKIGAAAAERQkAQCAgJAAAgQAAAAABEAhAAgAAACBKIBIAAgIAAAyAAAAABAAAAAAIIAAAoABAAAAIAAAAAAAAAAAAAAAACAAAIEAAAAAAAAAAAAAAAAAAAACAAAAAAEEdgASDQqIIyiBAQgEBCCBACIKwgAoAAQAABAkQEABAgIcAIAKjCBAAAAAAAAAAAAQAAAgAAAAAQiACAAAEAAAAgUAAAAAAAEADAAAAAAoAAIAAQEAAAQIAAAAAAiAAgAQAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAECAA,[2],False,"{'data': {'applicableSections': [2], 'cmpDisplayStatus': None, 'cmpId': 31, 'cmpStatus': 'loaded', 'gppString': 'DBABM~CQQLPkgQQLPkgAfA2BDEBmFsAP_gAEPgAAYgKPJR9G78TXlHODpzYbsEaYUX11hp4kQhAgCBI6IECDOQ8IQG1GECIAyAJCACABIAoBQBIAFEGAhEQUAAAIAFABBoSAAAAQAKIGAAAAERQkAQCAgJAAAgQAAAAABEAhAAgAAACBKIBIAAgIAAAyAAAAABAAAAAAIIAAAoABAAAAIAAAAAAAAAAAAAAAACAAAIEAAAAAAAAAAAAAAAAAAAACAAAAAAEEdgASDQqIIyiBAQgEBCCBACIKwgAoAAQAABAkQEABAgIcAIAKjCBAAAAAAAAAAAAQAAAgAAAAAQiACAAAEAAAAgUAAAAAAAEADAAAAAAoAAIAAQEAAAQIAAAAAAiAAgAQAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAECAA', 'gppVersion': '1.1', 'parsedSections': {'tcfeuv2': [{'CmpId': 0, 'CmpVersion': 0, 'ConsentLanguage': '', 'ConsentScreen': 0, 'Created': '2025-04-21T00:08:52.987Z', 'IsServiceSpecific': False, 'LastUpdated': '2025-04-21T00:08:52.987Z', 'PublisherCC': '', 'PurposeConsent': [], 'PurposeOneTreatment': False, 'PurposesLITransparency': [], 'SpecialFeatureOptIns': [], 'TcfPolicyVersion': 0, 'UseNonStandardStacks': False, 'VendorConsent': [], 'VendorLegitimateInterest': [], 'VendorListVersion': 0, 'Version': 3}]}, 'sectionList': [2], 'signalStatus': 'ready', 'supportedAPIs': ['2:tcfeuv2', '5:tcfcav1', '7:usnat', '8:usca', '9:usva', '10:usco', '11:usut', '12:usct', '13:usfl', '14:usmt', '15:usor', '16:ustx', '17:usde', '18:usia', '19:usne', '20:usnh', '21:usnj', '22:ustn']}, 'success': True}",
+9039,https://sciencenews.org/,50.82.238.33,Iowa,,,False,GPP API not found,"GPP Retrieval Error: string indices must be integers, not 'str'"
+9084,https://trackwrestling.com/,50.82.238.33,Iowa,DBACOe~CQQN2kAQQN2kAEXpEAENDDEgAAAAAEPgACiQAAANNgPAALAAcABUAC4AGQAOAAgABIADQAHwARQAmABSADQAH4AQgAjgBSgC3AGUAQcAiwBTwDXgHUAWEAvMBlgDLwGmgAAA~BQQN2kAQQN2kAEXpEAENDDCAAAAAAIfAAAAAA02A8AAsABwAFQALgAZAA4ACAAEgANAAfABFACYAFIANAAfgBCACOAFKALcAZQBBwCLAFPANeAdQBYQC8wGWAMvAaaA~1-Y-,"[2, 5, 6]",False,"{'data': {'applicableSections': [6], 'cmpDisplayStatus': 'hidden', 'cmpId': 279, 'cmpStatus': 'loaded', 'gppString': 'DBACOe~CQQN2kAQQN2kAEXpEAENDDEgAAAAAEPgACiQAAANNgPAALAAcABUAC4AGQAOAAgABIADQAHwARQAmABSADQAH4AQgAjgBSgC3AGUAQcAiwBTwDXgHUAWEAvMBlgDLwGmgAAA~BQQN2kAQQN2kAEXpEAENDDCAAAAAAIfAAAAAA02A8AAsABwAFQALgAZAA4ACAAEgANAAfABFACYAFIANAAfgBCACOAFKALcAZQBBwCLAFPANeAdQBYQC8wGWAMvAaaA~1-Y-', 'gppVersion': '1.1', 'parsedSections': {'tcfcav1': [{'CmpId': 279, 'CmpVersion': 2628, 'ConsentLanguage': 'EN', 'ConsentScreen': 0, 'Created': '2025-04-21T00:00:00.000Z', 'LastUpdated': '2025-04-21T00:00:00.000Z', 'PurposesExpressConsent': [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False], 'PurposesImpliedConsent': [False, True, False, False, False, False, True, True, True, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False], 'SpecialFeatureExpressConsent': [False, False, False, False, False, False, False, False, False, False, False, False], 'TcfPolicyVersion': 2, 'UseNonStandardTexts': False, 'VendorExpressConsent': [], 'VendorImpliedConsent': [11, 14, 21, 23, 25, 28, 32, 36, 52, 62, 69, 76, 82, 104, 126, 132, 142, 165, 183, 202, 263, 278, 335, 431, 468, 706, 755, 812, 815, 845], 'VendorListVersion': 195, 'Version': 1}], 'uspv1': [{'uspString': '1-Y-', 'version': 1}]}, 'sectionList': [2, 5, 6], 'signalStatus': 'ready', 'supportedAPIs': ['2:tcfeuv2', '5:tcfcav1', '6:uspv1']}, 'success': True}",
+9102,https://iflscience.com/,50.82.238.33,Iowa,,,False,GPP API not found,"GPP Retrieval Error: string indices must be integers, not 'str'"
+9122,https://sd.rs/,50.82.238.33,Iowa,DBABM~CQQLPkgQQLPkgAfQcBSRBmFsAP_gAEPgAAigKRpF9G7faWFjeDpzabsEcIUXx1hp4sAhAgCAE4gBiDKAcIQGFmAyIAygJCACABAAIBRAIQFsCAgQQUCAAIABABDIIAAAAAACIGAEAAEQQkAICAAJAAAgAAAQAABEAlAAgAABARIICIAAAAAAASAgAAAAAAABAQAIAAAAQAAAAAAAYAAAAAAAAAAAAAAAAABIEAAAAQAAAAAAAAAAAAAAAAAABAAAAIKEQPQAEAALAAdABQAFQALgAcAA8ACAAEgAKgAZQA0ADUAHgAPwAjgBMACqAF0AMQAaAA9AB-AEJAIgAiQBHACaAE4AKMAVoAwwBogDnAHdAPwA_QCEAEWAIxARwBHQCSgEpAM-Aa8A4gB2wD7AH_gR4BHoCZAFHgKlAWoAtgBcgC5gF5gMWAZOBG8COwEkgKEAAA,[2],False,"{'data': {'applicableSections': [2], 'cmpDisplayStatus': None, 'cmpId': 31, 'cmpStatus': 'loaded', 'gppString': 'DBABM~CQQLPkgQQLPkgAfQcBSRBmFsAP_gAEPgAAigKRpF9G7faWFjeDpzabsEcIUXx1hp4sAhAgCAE4gBiDKAcIQGFmAyIAygJCACABAAIBRAIQFsCAgQQUCAAIABABDIIAAAAAACIGAEAAEQQkAICAAJAAAgAAAQAABEAlAAgAABARIICIAAAAAAASAgAAAAAAABAQAIAAAAQAAAAAAAYAAAAAAAAAAAAAAAAABIEAAAAQAAAAAAAAAAAAAAAAAABAAAAIKEQPQAEAALAAdABQAFQALgAcAA8ACAAEgAKgAZQA0ADUAHgAPwAjgBMACqAF0AMQAaAA9AB-AEJAIgAiQBHACaAE4AKMAVoAwwBogDnAHdAPwA_QCEAEWAIxARwBHQCSgEpAM-Aa8A4gB2wD7AH_gR4BHoCZAFHgKlAWoAtgBcgC5gF5gMWAZOBG8COwEkgKEAAA', 'gppVersion': '1.1', 'parsedSections': {'tcfeuv2': [{'CmpId': 0, 'CmpVersion': 0, 'ConsentLanguage': '', 'ConsentScreen': 0, 'Created': '2025-04-21T00:12:07.048Z', 'IsServiceSpecific': False, 'LastUpdated': '2025-04-21T00:12:07.048Z', 'PublisherCC': '', 'PurposeConsent': [], 'PurposeOneTreatment': False, 'PurposesLITransparency': [], 'SpecialFeatureOptIns': [], 'TcfPolicyVersion': 0, 'UseNonStandardStacks': False, 'VendorConsent': [], 'VendorLegitimateInterest': [], 'VendorListVersion': 0, 'Version': 3}]}, 'sectionList': [2], 'signalStatus': 'ready', 'supportedAPIs': ['2:tcfeuv2', '5:tcfcav1', '7:usnat', '8:usca', '9:usva', '10:usco', '11:usut', '12:usct', '13:usfl', '14:usmt', '15:usor', '16:ustx', '17:usde', '18:usia', '19:usne', '20:usnh', '21:usnj', '22:ustn']}, 'success': True}",
+9124,https://canal26.com/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: HTTPConnectionPool(host='localhost', port=60785): Read timed out. (read timeout=120)"
+9160,https://socialmediatoday.com/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: HTTPConnectionPool(host='localhost', port=60785): Read timed out. (read timeout=120)"
+9170,https://clickpetroleoegas.com.br/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: HTTPConnectionPool(host='localhost', port=60785): Read timed out. (read timeout=120)"
+9209,https://rynekzdrowia.pl/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: WebDriver session does not exist, or is not active
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:199:5
+InvalidSessionIDError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:469:5
+assert.that/<@chrome://remote/content/shared/webdriver/Assert.sys.mjs:559:13
+assert.session@chrome://remote/content/shared/webdriver/Assert.sys.mjs:37:4
+despatch@chrome://remote/content/marionette/server.sys.mjs:315:19
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/<@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/<@chrome://remote/content/marionette/transport.sys.mjs:494:20
+"
+9223,https://router-network.com/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: HTTPConnectionPool(host='localhost', port=60785): Read timed out. (read timeout=120)"
+9232,https://jbzd.com.pl/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9248,https://tupaki.com/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9252,https://syfy.com/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9262,https://petel.bg/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9277,https://xskt.com.vn/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9281,https://junaidjamshed.com/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9283,https://whatmobile.com.pk/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9311,https://loteriasdominicanas.com/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9339,https://delta-executor.com/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9351,https://chartink.com/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9354,https://electrek.co/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9394,https://tuttomercatoweb.com/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9418,https://tlife.gr/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9444,https://etoland.co.kr/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9459,https://tv9telugu.com/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9499,https://cc.com/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9532,https://curbed.com/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9535,https://clashofclans-layouts.com/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9553,https://bostonherald.com/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9634,https://wral.com/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9683,https://kurnik.pl/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9715,https://warszawawpigulce.pl/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9728,https://fcf.cat/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9734,https://riyasewana.com/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9756,https://sportime.gr/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9796,https://interestingengineering.com/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9828,https://jappy.com/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9843,https://motor1.com/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9871,https://voetbalprimeur.nl/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9912,https://kiskegyed.hu/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9926,https://jugandoonline.com.ar/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9960,https://quiz-facts.com/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
+9980,https://callbomberz.in/,50.82.238.33,Iowa,,,False,,"Domain Retrieval Error: Message: Tried to run command without establishing a connection
+"
